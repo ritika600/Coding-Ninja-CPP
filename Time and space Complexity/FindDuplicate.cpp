@@ -49,21 +49,14 @@ void mergeSort(int a[],int s,int e)
     }
     
 }
-int findUnique(int *a, int n) {
-    // Write your code here
-    if(n==1)
-        return a[0];
-    mergeSort(a,0,n-1);
-    for(int i=1;i<n;i++)
-    {  
-        if(i==n-1 && a[i]!=a[i-1])
-        {
-             return a[i];
-        }
-     if(a[i]!=a[i+1] && a[i]!=a[i-1])
-        {
-             return a[i];
-        }
-    }
 
+int findDuplicate(int *arr, int n)
+{
+    //Write your code here
+    mergeSort(arr,0,n-1);
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]==arr[i-1])
+            return arr[i];
+    }
 }
